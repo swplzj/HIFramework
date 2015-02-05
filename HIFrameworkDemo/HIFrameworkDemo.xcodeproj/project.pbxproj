@@ -19,6 +19,7 @@
 		E77BC2331A626C8600054C83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77BC21B1A626C8600054C83 /* UIKit.framework */; };
 		E77BC23B1A626C8600054C83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E77BC2391A626C8600054C83 /* InfoPlist.strings */; };
 		E77BC23D1A626C8600054C83 /* HIFrameworkDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E77BC23C1A626C8600054C83 /* HIFrameworkDemoTests.m */; };
+		E7C6C01D1A8315FA009137A4 /* NSObject+HiSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C6C01C1A8315FA009137A4 /* NSObject+HiSwizzle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		E77BC2381A626C8600054C83 /* HIFrameworkDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HIFrameworkDemoTests-Info.plist"; sourceTree = "<group>"; };
 		E77BC23A1A626C8600054C83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E77BC23C1A626C8600054C83 /* HIFrameworkDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIFrameworkDemoTests.m; sourceTree = "<group>"; };
+		E7C6C01B1A8315FA009137A4 /* NSObject+HiSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HiSwizzle.h"; sourceTree = "<group>"; };
+		E7C6C01C1A8315FA009137A4 /* NSObject+HiSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HiSwizzle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 		E77BC20B1A626C8600054C83 = {
 			isa = PBXGroup;
 			children = (
+				E7C6C0131A8315D5009137A4 /* HIFramework */,
 				E77BC21D1A626C8600054C83 /* HIFrameworkDemo */,
 				E77BC2361A626C8600054C83 /* HIFrameworkDemoTests */,
 				E77BC2161A626C8600054C83 /* Frameworks */,
@@ -107,7 +111,6 @@
 		E77BC21D1A626C8600054C83 /* HIFrameworkDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E77BC2461A626CE600054C83 /* HIFramework */,
 				E77BC2261A626C8600054C83 /* HIAppDelegate.h */,
 				E77BC2271A626C8600054C83 /* HIAppDelegate.m */,
 				E77BC2291A626C8600054C83 /* Images.xcassets */,
@@ -145,99 +148,69 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E77BC2461A626CE600054C83 /* HIFramework */ = {
+		E7C6C0131A8315D5009137A4 /* HIFramework */ = {
 			isa = PBXGroup;
 			children = (
-				E77BC24A1A626D5200054C83 /* Common */,
-				E77BC24B1A626D5400054C83 /* Extension */,
-				E77BC2491A626D4F00054C83 /* Model */,
-				E77BC2481A626D4B00054C83 /* Network */,
-				E77BC24C1A626D5700054C83 /* Resources */,
-				E77BC2511A62706900054C83 /* Utils */,
-				E77BC2471A626D3800054C83 /* Vendor */,
+				E7C6C0141A8315D5009137A4 /* Common */,
+				E7C6C0151A8315D5009137A4 /* Extension */,
+				E7C6C0161A8315D5009137A4 /* Model */,
+				E7C6C0171A8315D5009137A4 /* Network */,
+				E7C6C0181A8315D5009137A4 /* Resources */,
+				E7C6C0191A8315D5009137A4 /* Utils */,
+				E7C6C01A1A8315D5009137A4 /* Vendor */,
 			);
-			name = HIFramework;
+			path = HIFramework;
 			sourceTree = "<group>";
 		};
-		E77BC2471A626D3800054C83 /* Vendor */ = {
+		E7C6C0141A8315D5009137A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Vendor;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		E77BC2481A626D4B00054C83 /* Network */ = {
+		E7C6C0151A8315D5009137A4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E7C6C01B1A8315FA009137A4 /* NSObject+HiSwizzle.h */,
+				E7C6C01C1A8315FA009137A4 /* NSObject+HiSwizzle.m */,
 			);
-			name = Network;
+			path = Extension;
 			sourceTree = "<group>";
 		};
-		E77BC2491A626D4F00054C83 /* Model */ = {
+		E7C6C0161A8315D5009137A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		E77BC24A1A626D5200054C83 /* Common */ = {
+		E7C6C0171A8315D5009137A4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Common;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		E77BC24B1A626D5400054C83 /* Extension */ = {
+		E7C6C0181A8315D5009137A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Extension;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		E77BC24C1A626D5700054C83 /* Resources */ = {
+		E7C6C0191A8315D5009137A4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E77BC24D1A626D9100054C83 /* Images */,
-				E77BC24E1A626DCA00054C83 /* Data */,
-				E77BC24F1A626E4300054C83 /* Audios */,
-				E77BC2501A626EC600054C83 /* Videos */,
 			);
-			name = Resources;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		E77BC24D1A626D9100054C83 /* Images */ = {
+		E7C6C01A1A8315D5009137A4 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Images;
-			sourceTree = "<group>";
-		};
-		E77BC24E1A626DCA00054C83 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
-		E77BC24F1A626E4300054C83 /* Audios */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Audios;
-			sourceTree = "<group>";
-		};
-		E77BC2501A626EC600054C83 /* Videos */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Videos;
-			sourceTree = "<group>";
-		};
-		E77BC2511A62706900054C83 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Utils;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C6C01D1A8315FA009137A4 /* NSObject+HiSwizzle.m in Sources */,
 				E77BC2241A626C8600054C83 /* main.m in Sources */,
 				E77BC2281A626C8600054C83 /* HIAppDelegate.m in Sources */,
 			);
@@ -454,10 +428,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Weicheng Lu (HE37DW8L9R)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HIFrameworkDemo/HIFrameworkDemo-Prefix.pch";
 				INFOPLIST_FILE = "HIFrameworkDemo/HIFrameworkDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "050dae2d-ae2b-4751-b912-4642791a3b85";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -467,10 +443,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Weicheng Lu (HE37DW8L9R)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HIFrameworkDemo/HIFrameworkDemo-Prefix.pch";
 				INFOPLIST_FILE = "HIFrameworkDemo/HIFrameworkDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "050dae2d-ae2b-4751-b912-4642791a3b85";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -534,6 +512,7 @@
 				E77BC2421A626C8600054C83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E77BC2431A626C8600054C83 /* Build configuration list for PBXNativeTarget "HIFrameworkDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +521,7 @@
 				E77BC2451A626C8600054C83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
