@@ -14,13 +14,19 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [self loadSwizzle];
     
-    
+    [self testSwizzle];
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)loadSwizzle
+{
+    [NSObject swizzle];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -49,5 +55,38 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - test
+
+- (void)testSwizzle
+{
+    NSArray * testArray = @[];
+    NSLog(@"测试普通数组__NSArrayI = %@越界:",testArray);
+    NSLog(@"%@",[testArray objectAtIndex:0]);
+    
+    
+    NSMutableArray * testArrayM = [NSMutableArray arrayWithCapacity:0];
+    NSLog(@"测试可变数组__NSArrayM = %@越界:",testArrayM);
+    NSLog(@"%@",testArrayM[0]);
+    NSLog(@"测试可变数组__NSArrayM = %@移除对象越界:",testArrayM);
+    [testArrayM removeObjectAtIndex:0];
+    NSLog(@"测试可变数组__NSArrayM = %@插入空对象:",testArrayM);
+    [testArrayM insertObject:nil atIndex:0];
+    NSLog(@"测试可变数组__NSArrayM = %@添加空对象:",testArrayM);
+    [testArrayM addObject:nil];
+    
+    NSMutableDictionary * testDictM = [NSMutableDictionary dictionaryWithCapacity:0];
+    NSLog(@"测试可变字典__NSDictionaryM = %@插入空数据:",testArrayM);
+    [testDictM setObject:nil forKey:@"a"];
+    NSLog(@"测试可变字典__NSDictionaryM = %@移除空数据:",testArrayM);
+    [testDictM removeObjectForKey:@"b"];
+    
+    
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    [view addSubview:view ];
+    [view addSubview:testDictM];
+    
+}
+
 
 @end
